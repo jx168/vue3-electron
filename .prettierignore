@@ -1,0 +1,15 @@
+# Lock files
+*-lock.json
+
+# IDEs
+.idea/
+.vscode/
+
+# Project files
+.github/
+buildAssets/icons/
+dist/
+release/
+node_modules
+.eslintrc.json
+.prettierrc

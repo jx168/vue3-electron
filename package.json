@@ -1,0 +1,45 @@
+{
+  "name": "my-vue3-electron",
+  "version": "1.0.0",
+  "description": "一个集成了vue3，vite，vue-router，pinia，electron，eslint，pretter的基础架子",
+  "main": "dist/electron/main.js",
+  "type": "module",
+  "scripts": {
+    "dev": "chcp 65001 && vite",
+    "build:pre": "npm run format:fix && vite build",
+    "build:mac": "npm run build:pre && CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder --config=buildConfig/config.cjs --mac",
+    "build:linux": "npm run build:pre && electron-builder --config=buildConfig/config.cjs --linux",
+    "build:win": "npm run build:pre && electron-builder --config=buildConfig/config.cjs --windows",
+    "lint": "eslint --ext .js,.vue -f ./node_modules/eslint-friendly-formatter src",
+    "lint:fix": "eslint --ext .js,.vue -f ./node_modules/eslint-friendly-formatter --fix src",
+    "format": "prettier .",
+    "format:fix": "prettier . --write"
+  },
+  "keywords": [],
+  "author": "ljx168",
+  "license": "ISC",
+  "dependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
+    "pinia": "^2.1.7",
+    "vue": "^3.4.26",
+    "vue-router": "^4.0.13"
+  },
+  "devDependencies": {
+    "electron": "^30.0.1",
+    "electron-builder": "^24.13.3",
+    "eslint": "8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-vue": "^9.25.0",
+    "less": "^4.2.0",
+    "prettier": "^3.2.5",
+    "vite-plugin-electron": "^0.28.7",
+    "vite-plugin-eslint": "^1.8.1",
+    "vue-eslint-parser": "^9.4.2"
+  },
+  "build": {
+    "extends": null
+  }
+}
