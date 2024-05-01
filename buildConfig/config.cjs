@@ -1,21 +1,15 @@
 module.exports = {
-  // 应用程序的唯一标识符，这个值在打包和部署时会用到。
   appId: 'com.xiaoluo.electron-app',
-  // 应用程序的产品名称，通常用于构建过程中生成的安装程序文件名等地方
   productName: '番茄小说下载',
-  // asar加密  是否使用Electron的存档格式将应用程序的源代码打包到存档中
   asar: true,
   directories: {
-    // 指定了输出目录的路径，即构建后的文件将会保存在 dist 目录中。
     output: 'dist'
   },
-  // 自定义artifactName，该名称就是打包后我们可安装的.exe可执行文件的名称
   // eslint-disable-next-line no-template-curly-in-string
   artifactName: '${productName}_${version}_${os}_${arch}.${ext}',
   // 指定打包时所需要打包的文件夹
   // files: ['electron/**/*', 'src/**/*', 'dist/**/*'],
   files: ['dist/**/*'],
-  // 指定了 NSIS（Nullsoft Scriptable Install System）打包的相关配置。
   nsis: {
     // 是否启用一键安装模式
     oneClick: false,
@@ -38,10 +32,9 @@ module.exports = {
     // 卸载时删除用户数据
     deleteAppDataOnUninstall: true
   },
-  // 指定了 Windows 平台的配置。
   win: {
     // 指定应用程序的图标文件路径
-    // icon: '',
+    icon: '../electron/icons/vuelectron.ico',
     target: [
       {
         target: 'nsis',

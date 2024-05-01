@@ -54,8 +54,6 @@ function createWindow() {
   //   console.log(res, '002222222')
   // })
 
-
-
   // 查询数据库中文档
   db.find({name: 'luo'}).then(res => {
     console.log(res, '00000')
@@ -100,6 +98,6 @@ function createWindow() {
   })
 }
 
-// 总的来说，如果您需要等待一些特殊的初始化操作完成后再执行代码，可以使用 app.whenReady()。而如果您只是需要在应用程序准备就绪后执行一些代码，可以使用 app.on('ready')。
+
 app.whenReady().then(createWindow) // 推荐使用这个
 // app.on('ready', createWindow)
