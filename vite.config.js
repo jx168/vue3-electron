@@ -5,6 +5,7 @@ import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import VitePluginEslint from 'vite-plugin-eslint'
 import VitePluginElectron from 'vite-plugin-electron'
+import vitePluginVuetify from 'vite-plugin-vuetify'
 
 const isDevEnv = process.env.NODE_ENV === 'development'
 
@@ -62,6 +63,10 @@ export default defineConfig(() => {
     },
     plugins: [
       Vue(),
+      // Docs: https://github.com/vuetifyjs/vuetify-loader
+      vitePluginVuetify({
+        autoImport: true
+      }),
       /**
        * vite-plugin-eslint
        *  实时代码检查： 在开发过程中，即时检查代码，帮助开发者发现潜在的问题或错误。

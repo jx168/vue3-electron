@@ -1,4 +1,14 @@
 <template>
+  <p class="mb20">vuetify框架的按钮</p>
+  <v-btn
+    append-icon="mdi-account-circle"
+    prepend-icon="mdi-check-circle"
+    >
+    <template #prepend>
+      <v-icon color="success"></v-icon>
+    </template>
+    Button
+  </v-btn>
   <div class="tex" @click="cli">12--asda阿斯达-5652321</div>
   <div class="fa">
     阿萨德
