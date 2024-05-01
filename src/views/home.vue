@@ -13,11 +13,14 @@
     {{ counterStore.count }}
     <p @click="piniaClick">点击增加pinia数量</p>
   </div>
-  <div>
+  <div class="mb20">
     {{ msg1 }}
   </div>
-  <div>
+  <div class="mb20">
     {{ msg2 }}
+  </div>
+  <div v-show="msg3">
+    electron端查询数据库得到的数据：{{ msg3 }}
   </div>
 </template>
 
@@ -29,13 +32,13 @@ const router = useRouter()
 
 const msg1 = ref('')
 const msg2 = ref('')
+const msg3 = ref('')
 
 const counterStore = useCounterStore()
 // console.log(counterStore, '000')
 
 // 渲染进程中
 window.addEventListener('message', (e) => {
-  console.log(e, '0000')
   if (e?.data?.type === 'messageFromMain') {
     // console.log(e.data.data); // 主进程传来的第一条信息
     msg1.value = e.data.data
@@ -45,6 +48,9 @@ window.addEventListener('message', (e) => {
   } else if (e?.data?.type === 'goToAbout') {
     console.log('要跳转关于页面啦+++')
     router.push({ path: '/about' })
+  } else if(e?.data?.type === 'nedbFind') {
+    console.log('electron端查询数据后得到的信息：', e.data.data)
+    msg3.value = e.data.data
   }
 })
 

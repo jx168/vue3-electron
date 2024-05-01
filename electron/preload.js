@@ -43,3 +43,8 @@ ipcRenderer.on('messageFromMain2', (event, arg) => {
 ipcRenderer.on('goToAbout', (e, arg) => {
   window.postMessage({ type: 'goToAbout', data: arg }, '*')
 })
+
+// 数据库查询到信息：告知vue端
+ipcRenderer.on('nedbFind', (e, arg) => {
+  window.postMessage({ type: 'nedbFind', data: arg }, '*')
+})

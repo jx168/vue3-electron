@@ -1,15 +1,10 @@
 import { app, BrowserWindow, Menu, ipcMain } from 'electron'
-// 在 Node.js 中，path 模块并没有提供 dirname 和 path 的命名导出。相反，你可以将 dirname 作为一个命名导出，path 作为默认导出。
-import path, { dirname } from 'path'
-import { fileURLToPath } from 'url'
+import path from 'path'
 import Constants from './const'
 import { getMenuTemplate } from './menuTemplate'
+import DBManager from '../nedb/nedbManager'
 
-// 获取当前模块的 URL
-const __filename = fileURLToPath(import.meta.url)
-// 获取当前模块的目录路径
-const __dirname = dirname(__filename)
-// 在ES模式中，node里的__dirname变量不可用，需要自己处理
+let dbFind = ''
 
 // 退出窗口
 const exitWindow = (win) => {
@@ -23,6 +18,10 @@ const exitWindow = (win) => {
 
 // 创建窗口
 function createWindow() {
+
+  // nedb数据库
+  const db = new DBManager()
+  // 创建窗口
   const win = new BrowserWindow({
     width: 1200,
     height: 700,
@@ -31,7 +30,7 @@ function createWindow() {
     // frame: false, // 不显示窗口边框和标题栏(设置这个，可以自定义自己喜欢的顶部菜单栏)
     // 加载主进程和渲染进程之间通信的文件
     webPreferences: {
-      preload: path.join(__dirname, 'preload.js')
+      preload: path.join(Constants.__dirname, 'preload.js')
     }
   })
 
@@ -49,6 +48,19 @@ function createWindow() {
   } else {
     win.loadFile(Constants.APP_PROD_URL)
   }
+
+  // 插入文档到数据库
+  // db.insert({name:'luo',money:200000000}).then(res => {
+  //   console.log(res, '002222222')
+  // })
+
+
+
+  // 查询数据库中文档
+  db.find({name: 'luo'}).then(res => {
+    console.log(res, '00000')
+    dbFind = res[0] || '数据库查收数据'
+  })
 
   // 在窗口触发"ready-to-show"时显示窗口是为了使加载时的白屏时间不被用户看到
   // 'ready-to-show' 事件表示 Electron 主进程已经创建了窗口，但是还没有呈现给用户。
@@ -77,7 +89,9 @@ function createWindow() {
       '这是electron端传给vue端的第一条信息'
     )
     win.webContents.send('messageFromMain2', '这是另外一条信息')
-  }, 4000)
+
+    win.webContents.send('nedbFind', dbFind)
+  }, 8000)
 
   // 关闭窗口
   win.on('close', (event) => {
