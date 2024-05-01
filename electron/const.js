@@ -23,4 +23,6 @@ export default class Constants {
   // 开发与生产环境，electron加载vue3工程的路径
   static APP_DEV_URL = 'http://localhost:5173'
   static APP_PROD_URL = join(__dirname, '../index.html')
+
+  static __dirname = __dirname
 }
