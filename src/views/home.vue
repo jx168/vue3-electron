@@ -21,6 +21,7 @@ const msg1 = ref('')
 const msg2 = ref('')
 
 const a = 123
+const b = '再次测试'
 
 // 渲染进程中
 window.addEventListener('message', (e) => {
