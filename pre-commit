@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Ensure the pre-commit file has execute permissions
+chmod +x .git/hooks/pre-commit
+
+# Run lint-staged
+npx lint-staged
+
+# Get lint-staged return code
+LINT_STAGED_STATUS=$?
+
+# If lint-staged failed, exit with failure status
+if [ $LINT_STAGED_STATUS -ne 0 ]; then
+  echo "lint-staged failed, aborting commit."
+  exit 1
+fi
