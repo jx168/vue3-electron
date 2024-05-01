@@ -1,7 +1,7 @@
 {
   "name": "vue3-electron",
   "version": "1.0.0",
-  "description": "一个集成了vue3，vite，vue-router，pinia，electron，eslint，pretter的基础架子",
+  "description": "一个集成了vue3，vite，vue-router，pinia，electron，eslint，pretter，vue-i18n，数据库等基础架子",
   "main": "dist/electron/main.js",
   "type": "module",
   "scripts": {
@@ -26,8 +26,10 @@
   "license": "MIT",
   "dependencies": {
     "@vitejs/plugin-vue": "^5.0.4",
+    "normalize.css": "^8.0.1",
     "pinia": "^2.1.7",
     "vue": "^3.4.26",
+    "vue-i18n": "^9.13.1",
     "vue-router": "^4.0.13"
   },
   "devDependencies": {

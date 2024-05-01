@@ -5,6 +5,10 @@
     <p class="son">阿斯达</p>
   </div>
   <div>
+    vue-i18n的支持
+    <p class="primary">{{ $t('welcome') }}</p>
+  </div>
+  <div>
     {{ msg1 }}
   </div>
   <div>

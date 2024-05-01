@@ -24,8 +24,8 @@ const exitWindow = (win) => {
 // 创建窗口
 function createWindow() {
   const win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1200,
+    height: 700,
     icon: './icons/200x200.png',
     // type: 'toolbar', // 创建的窗口类型为工具栏窗口
     // frame: false, // 不显示窗口边框和标题栏(设置这个，可以自定义自己喜欢的顶部菜单栏)

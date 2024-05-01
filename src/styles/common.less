@@ -1,0 +1,12 @@
+// 在 LESS 中，@import url() 语法是用来引入外部 CSS 文件或者其他资源的，而不是用来引入 LESS 文件的。虽然 @import url() 语法在 CSS 中可以引入外部的 CSS 文件，但在 LESS 中，它也可以引入外部的字体文件、图像文件等，但是并不支持引入 LESS 文件。 如果你想要引入另一个 LESS 文件，应该使用普通的 @import 语法，而不是 @import url()。
+
+// @import: @import 用于引入另一个 LESS 文件。 使用 @import 时，你只需指定文件名即可，不需要提供文件路径的引号或括号。 @import 会在编译时将被引入的 LESS 文件的内容合并到当前文件中，形成一个整体的样式表。
+
+// @import url(): @import url() 用于引入外部 CSS 文件，或者 CSS 字体文件等。 使用 @import url() 时，你需要提供文件的路径，并且需要使用引号或括号将路径括起来。 @import url() 是 CSS 的语法，可以在 LESS 中使用，用于引入外部的 CSS 资源。
+
+@import 'normalize.css';
+@import './var.less';
+
+.primary {
+  color: @primary-color;
+}
