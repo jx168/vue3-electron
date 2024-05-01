@@ -2,9 +2,9 @@
   <div class="about-warp">
     关于本项目：
     <p
-      >项目已经集成了：vite，vue3，vue-router，pinia，electron，eslint，pretter</p
+      >项目已经集成了：vite，vue3，vue-router，pinia，electron，eslint，pretter，lint-staged，vue-i18n，</p
     >
-    <p>后续还会加入：lintage，UI框架vuetify，数据库，i18n等</p>
+    <p>后续还会加入：UI框架vuetify，数据库等</p>
 
     <p class="text" @click="goBack">返回</p>
   </div>
