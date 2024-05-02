@@ -7,6 +7,10 @@ import VitePluginEslint from 'vite-plugin-eslint'
 import VitePluginElectron from 'vite-plugin-electron'
 import vitePluginVuetify from 'vite-plugin-vuetify'
 
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+
 const isDevEnv = process.env.NODE_ENV === 'development'
 
 export default defineConfig(() => {
@@ -63,6 +67,18 @@ export default defineConfig(() => {
     },
     plugins: [
       Vue(),
+
+      // 自动引入element-plus
+      AutoImport({
+        resolvers: [ElementPlusResolver()],
+      }),
+      // 自动引入element-plus
+      Components({
+        resolvers: [ElementPlusResolver()],
+      }),
+
+
+
       // Docs: https://github.com/vuetifyjs/vuetify-loader
       vitePluginVuetify({
         autoImport: true

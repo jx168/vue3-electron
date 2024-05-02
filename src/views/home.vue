@@ -10,11 +10,18 @@
     </template>
     Button
   </v-btn>
-  <div class="tex" @click="cli">12--asda阿斯达-5652321</div>
+
+  <p>element-plus框架</p>
+  <el-button type="primary">el按钮</el-button>
+
+
+  <div class="tex mbt10" @click="cli">使用less变量，改变文字颜色</div>
+
   <div class="fa mb20">
-    阿萨德
+    使用scss变量，改变的
     <p class="son">阿斯达</p>
   </div>
+
   <div class="mb20">
     vue-i18n的支持
     <p class="primary">{{ $t('welcome') }}</p>

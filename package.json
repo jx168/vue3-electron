@@ -26,6 +26,7 @@
   "license": "MIT",
   "dependencies": {
     "@vitejs/plugin-vue": "^5.0.4",
+    "element-plus": "^2.7.2",
     "nedb": "^1.8.0",
     "normalize.css": "^8.0.1",
     "pinia": "^2.1.7",
@@ -47,6 +48,8 @@
     "less": "^4.2.0",
     "lint-staged": "^15.2.2",
     "prettier": "^3.2.5",
+    "unplugin-auto-import": "^0.17.5",
+    "unplugin-vue-components": "^0.27.0",
     "vite-plugin-electron": "^0.28.7",
     "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-vuetify": "^2.0.3",
