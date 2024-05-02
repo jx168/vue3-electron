@@ -19,7 +19,7 @@
 
   <div class="fa mb20">
     使用scss变量，改变的
-    <p class="son">阿斯达</p>
+    <p class="son">scss变量文件已配置vite，自动引入</p>
   </div>
 
   <div class="mb20">
@@ -91,7 +91,14 @@ function piniaClick() {
 .fa {
   color: red;
   .son {
-    color: blue;
+    // color: blue;
+    font-size: 20px;
   }
+}
+</style>
+
+<style lang="scss" scoped>
+.son {
+  color: $primary-color;
 }
 </style>

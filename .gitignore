@@ -32,3 +32,6 @@ coverage
 /src/assets/main.css
 
 /说明文档/
+
+auto-imports.d.ts
+components.d.ts

@@ -101,6 +101,11 @@ export default defineConfig(() => {
         less: {
           javascriptEnabled: true,
           additionalData: `@import "${resolve(__dirname, 'src/styles/var.less')}";`
+        },
+        // 自动引入scss变量文件
+        scss: {
+          javascriptEnabled: true,
+          additionalData: `@import "@/styles/var.scss";`
         }
       }
     }
