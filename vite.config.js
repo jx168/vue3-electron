@@ -103,9 +103,11 @@ export default defineConfig(() => {
           additionalData: `@import "${resolve(__dirname, 'src/styles/var.less')}";`
         },
         // 自动引入scss变量文件
+        // 您应该使用 @use 'xxx.scss' as *; 代替 @import 'xxx.scss';。因为 sass 团队说他们最终会删除 @import 语法。
         scss: {
           javascriptEnabled: true,
-          additionalData: `@import "@/styles/var.scss";`
+          // additionalData: `@import "@/styles/var.scss";`
+          additionalData: `@import "@/styles/var.scss" as *;`
         }
       }
     }

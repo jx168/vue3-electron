@@ -1,6 +1,6 @@
 
-@use 'normalize.css';
-@use './var.less';
+@use 'normalize.css' as *;
+@use './var.less' as *;
 
 .primary {
   color: $primary-color;
