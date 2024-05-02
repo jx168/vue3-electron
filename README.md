@@ -1,17 +1,16 @@
 <div style="text-align:center">
   <img src="./electron/icons/200x200.png" alt="Vuelectron.png">
 
-
 ---
 
 这是一个快速启动 **[Vite](https://vitejs.dev)** + **[Vue 3](https://vuejs.org)** + **[Electron](https://www.electronjs.org)** 项目基础模板
 
 </div>
 
-
 ## 目前项目已经集成了：electron，vue3，vite，vue-router，pinia，eslint，pretter，UI框架vuetify，vue-i18n，数据库（nedb，sqlite）等功能
 
 ### 本地开发运行项目
+
 1. git clone git@github.com:jx168/vue3-electron.git
 
 2. cd vue3-electron
@@ -33,7 +32,7 @@
 ### 打包生产
 
 - 打包（这里以windows为例）
-> npm run build:win 或者 yarn build:win
+  > npm run build:win 或者 yarn build:win
 
 **若打包过程中，出现慢和卡顿问题，请往下看**
 
@@ -50,8 +49,3 @@
 - electron下载地址：https://registry.npmmirror.com/-/binary/electron/30.0.1/electron-v30.0.1-win32-x64.zip
 
 - winCodeSign下载地址：https://github.com/electron-userland/electron-builder-binaries/releases/download/winCodeSign-2.6.0/winCodeSign-2.6.0.7z
-
-
-
-
-

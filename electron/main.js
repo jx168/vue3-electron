@@ -18,7 +18,6 @@ const exitWindow = (win) => {
 
 // 创建窗口
 function createWindow() {
-
   // nedb数据库
   const db = new DBManager()
   // 创建窗口
@@ -54,10 +53,8 @@ function createWindow() {
   //   console.log(res, '002222222')
   // })
 
-
-
   // 查询数据库中文档
-  db.find({name: 'luo'}).then(res => {
+  db.find({ name: 'luo' }).then((res) => {
     console.log(res, '00000')
     dbFind = res[0] || '数据库查收数据'
   })

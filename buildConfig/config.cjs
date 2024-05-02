@@ -15,6 +15,7 @@ module.exports = {
   // 指定打包时所需要打包的文件夹
   // files: ['electron/**/*', 'src/**/*', 'dist/**/*'],
   files: ['dist/**/*'],
+  asarUnpack: ['data.db'],
   // 指定了 NSIS（Nullsoft Scriptable Install System）打包的相关配置。
   nsis: {
     // 是否启用一键安装模式

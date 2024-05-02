@@ -5,4 +5,4 @@ export default class Utils {
   }
 }
 
-export const { getCurrentLocale  } = Utils
+export const { getCurrentLocale } = Utils

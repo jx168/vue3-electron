@@ -19,9 +19,7 @@
   <div class="mb20">
     {{ msg2 }}
   </div>
-  <div v-show="msg3">
-    electron端查询数据库得到的数据：{{ msg3 }}
-  </div>
+  <div v-show="msg3"> electron端查询数据库得到的数据：{{ msg3 }} </div>
 </template>
 
 <script setup>
@@ -48,7 +46,7 @@ window.addEventListener('message', (e) => {
   } else if (e?.data?.type === 'goToAbout') {
     console.log('要跳转关于页面啦+++')
     router.push({ path: '/about' })
-  } else if(e?.data?.type === 'nedbFind') {
+  } else if (e?.data?.type === 'nedbFind') {
     console.log('electron端查询数据后得到的信息：', e.data.data)
     msg3.value = e.data.data
   }
