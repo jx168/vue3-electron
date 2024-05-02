@@ -1,5 +1,5 @@
 import { createVuetify } from 'vuetify'
-import { zhHans,en } from 'vuetify/locale'
+import { zhHans, en } from 'vuetify/locale'
 import { aliases, mdi } from 'vuetify/iconsets/mdi'
 import 'vuetify/styles'
 import '@mdi/font/css/materialdesignicons.min.css'

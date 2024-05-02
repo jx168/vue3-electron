@@ -1,7 +1,7 @@
 module.exports = {
   appId: 'com.xiaoluo.electron-app',
   productName: '番茄小说下载',
-  asar: true,
+  // asar: true,
   directories: {
     output: 'dist'
   },
@@ -10,6 +10,8 @@ module.exports = {
   // 指定打包时所需要打包的文件夹
   // files: ['electron/**/*', 'src/**/*', 'dist/**/*'],
   files: ['dist/**/*'],
+  // 排除 data.db 文件，以便它不被打包到 app.asar 中
+  asarUnpack: ['data.db'],
   nsis: {
     // 是否启用一键安装模式
     oneClick: false,
@@ -33,8 +35,8 @@ module.exports = {
     deleteAppDataOnUninstall: true
   },
   win: {
-    // 指定应用程序的图标文件路径
-    icon: '../electron/icons/vuelectron.ico',
+    // 指定应用程序的图标文件路径(最少需要256*256)
+    icon: '../electron/icons/ab.ico',
     target: [
       {
         target: 'nsis',

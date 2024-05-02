@@ -8,9 +8,6 @@ import vuetify from '@/vuetify/vuetifyConfig'
 
 const app = createApp(App)
 
-app.use(createPinia())
-.use(router)
-.use(i18n)
-.use(vuetify)
+app.use(createPinia()).use(router).use(i18n).use(vuetify)
 
 app.mount('#app')

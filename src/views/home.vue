@@ -1,27 +1,29 @@
 <template>
-  <p class="mb20">vuetify框架的按钮</p>
+  <p>vuetify框架的按钮</p>
   <v-btn
+    class="mb20"
     append-icon="mdi-account-circle"
     prepend-icon="mdi-check-circle"
-    >
+  >
     <template #prepend>
       <v-icon color="success"></v-icon>
     </template>
     Button
   </v-btn>
   <div class="tex" @click="cli">12--asda阿斯达-5652321</div>
-  <div class="fa">
+  <div class="fa mb20">
     阿萨德
     <p class="son">阿斯达</p>
   </div>
-  <div>
+  <div class="mb20">
     vue-i18n的支持
     <p class="primary">{{ $t('welcome') }}</p>
   </div>
-  <div>
+  <div class="mb20">
     pinia支持：
     {{ counterStore.count }}
-    <p @click="piniaClick">点击增加pinia数量</p>
+
+    <v-btn @click="piniaClick"> 点击增加pinia数量 </v-btn>
   </div>
   <div class="mb20">
     {{ msg1 }}
@@ -29,9 +31,7 @@
   <div class="mb20">
     {{ msg2 }}
   </div>
-  <div v-show="msg3">
-    electron端查询数据库得到的数据：{{ msg3 }}
-  </div>
+  <div v-show="msg3"> electron端查询数据库得到的数据：{{ msg3 }} </div>
 </template>
 
 <script setup>
@@ -58,7 +58,7 @@ window.addEventListener('message', (e) => {
   } else if (e?.data?.type === 'goToAbout') {
     console.log('要跳转关于页面啦+++')
     router.push({ path: '/about' })
-  } else if(e?.data?.type === 'nedbFind') {
+  } else if (e?.data?.type === 'nedbFind') {
     console.log('electron端查询数据后得到的信息：', e.data.data)
     msg3.value = e.data.data
   }

@@ -49,15 +49,15 @@ function createWindow() {
     win.loadFile(Constants.APP_PROD_URL)
   }
 
-  // 插入文档到数据库
+  // // 插入文档到数据库
   // db.insert({name:'luo',money:200000000}).then(res => {
   //   console.log(res, '002222222')
   // })
 
   // 查询数据库中文档
-  db.find({name: 'luo'}).then(res => {
+  db.find({ name: 'luo' }).then((res) => {
     console.log(res, '00000')
-    dbFind = res[0] || '数据库查收数据'
+    dbFind = res[0] || '数据库查询数据'
   })
 
   // 在窗口触发"ready-to-show"时显示窗口是为了使加载时的白屏时间不被用户看到
@@ -84,9 +84,9 @@ function createWindow() {
     // 发送信息到预加载脚本，然后传给vue端
     win.webContents.send(
       'messageFromMain',
-      '这是electron端传给vue端的第一条信息'
+      `这是electron端传给vue端的第一条信息${process.cwd()}`
     )
-    win.webContents.send('messageFromMain2', '这是另外一条信息')
+    win.webContents.send('messageFromMain2', `这是另外一条信息${db.luo}`)
 
     win.webContents.send('nedbFind', dbFind)
   }, 8000)
